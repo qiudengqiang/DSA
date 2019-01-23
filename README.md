@@ -1,5 +1,6 @@
-# leetcode
+LeetCode
 ========
+
 LeetCode Problems' Solutions
 
 ### LeetCode Algorithm
