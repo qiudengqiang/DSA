@@ -2,7 +2,7 @@
 //  LongestCommonPrefix.c
 //  Exam
 //
-//  Created by Apple on 2019/1/22.
+//  Created by techbird on 2019/1/22.
 //  Copyright © 2019 apple. All rights reserved.
 //
 
