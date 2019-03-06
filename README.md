@@ -20,6 +20,7 @@ LeetCode
 |182|[duplicate emails](https://leetcode.com/problems/duplicate-emails/)| [mysql](./database/mysql/duplicate-emails/duplicate-emails.sql)|Easy|
 |183|[customers who never order](https://leetcode.com/problems/customers-who-never-order/)| [mysql](./database/mysql/customers-who-never-order/customers-who-never-order.sql)|Easy|
 |196|[delete duplicate emails](https://leetcode.com/problems/delete-duplicate-emails/)| [mysql](./database/mysql/delete-duplicate-emails/delete-duplicate-emails.sql)|Easy|
+|197|[rising temperature](https://leetcode.com/problems/rising-temperature/)| [mysql](./database/mysql/rising-temperature/rising-temperature.sql)|Easy|
 
 
 ### LeetCode Shell
