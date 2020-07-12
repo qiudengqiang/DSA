@@ -2,7 +2,11 @@ package me.techbird.leetcode.recursion;
 
 import me.techbird.leetcode.tool.Times;
 
-public class FibonacciNumber {
+/**
+ * 509. 斐波那契数
+ * https://leetcode-cn.com/problems/fibonacci-number/
+ */
+public class _509_FibonacciNumber {
     //eg:   0 1 2 3 4 5 6
     //ru le: 0 1 1 2 3 5 8
     //规则：下一个数，是前面两个数相加，求第n个相加的和

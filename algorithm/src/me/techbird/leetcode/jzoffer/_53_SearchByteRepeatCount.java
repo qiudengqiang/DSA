@@ -1,4 +1,4 @@
-package me.techbird.leetcode.array;
+package me.techbird.leetcode.jzoffer;
 
 /**
  * 统计一个数字在排序数组中出现的次数。
@@ -18,7 +18,7 @@ package me.techbird.leetcode.array;
  * 链接：https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class SearchByteRepeatCount {
+public class _53_SearchByteRepeatCount {
     /**
      * 方法一：遍历数组与target作比较，设置计数器
      * 算法时间复杂度：o(n)

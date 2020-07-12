@@ -1,6 +1,10 @@
-package me.techbird.leetcode.recursion;
+package me.techbird.leetcode.jzoffer;
 
-public class CountDigitOne {
+/**
+ * 剑指 Offer 43. 1～n整数中1出现的次数
+ * https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/
+ */
+public class _43_CountDigitOne {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         System.out.println(f(1999));

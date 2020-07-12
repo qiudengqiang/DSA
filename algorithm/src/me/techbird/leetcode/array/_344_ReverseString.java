@@ -1,6 +1,11 @@
 package me.techbird.leetcode.array;
 
-public class ReverseString {
+
+/**
+ * 344. 反转字符串
+ * https://leetcode-cn.com/problems/reverse-string/
+ */
+public class _344_ReverseString {
     public static void main(String[] args) {
         char[] s = {'h', 'e', 'l', 'l', 'o'};
         System.out.println(s);
