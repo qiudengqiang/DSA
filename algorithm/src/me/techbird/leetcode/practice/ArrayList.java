@@ -1,12 +1,8 @@
 package me.techbird.leetcode.practice;
 
 
-public class ArrayList<E> {
-
+public class ArrayList<E> extends AbstractList<E> {
     private static final int DEFAULT_CAPACITY = 10;
-    private static final int ELEMENT_NOT_FOUND = -1;
-
-    private int size;
     private E[] elements;
 
     @SuppressWarnings("unchecked")
@@ -19,28 +15,11 @@ public class ArrayList<E> {
         elements = (E[]) new Object[capacity];
     }
 
-    public int size() {
-        return size;
-    }
-
     public void clear() {
         for (int i = 0; i < size; i++) {
             elements[i] = null;
         }
         size = 0;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    /**
-     * 添加至末尾
-     *
-     * @param element
-     */
-    public void add(E element) {
-        add(size, element);
     }
 
     /**
@@ -98,11 +77,6 @@ public class ArrayList<E> {
         return old;
     }
 
-    public void removeAll() {
-        for (int i = 0; i < size; i++) {
-            elements[i] = null;
-        }
-    }
 
     public boolean contains(E element) {
         return indexOf(element) != ELEMENT_NOT_FOUND;
@@ -124,21 +98,6 @@ public class ArrayList<E> {
         return ELEMENT_NOT_FOUND;
     }
 
-    private void rangeCheck(int index) {
-        if (index < 0 || index >= size) {
-            outOfBounds(index);
-        }
-    }
-
-    private void rangeCheckForAdd(int index) {
-        if (index < 0 || index > size) {
-            outOfBounds(index);
-        }
-    }
-
-    private void outOfBounds(int index) {
-        throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-    }
 
     @Override
     public String toString() {
