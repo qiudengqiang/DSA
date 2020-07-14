@@ -13,27 +13,24 @@ public class _19_RemoveNthFromEnd {
 
         int t = 0;
         //反转链表删除第n个
-        ListNode last = head;
-        while (last != null) {
+        ListNode node = head;
+        while (node != null) {
             t++;
-            last = last.next;
+            node = node.next;
         }
 
-        if(t == 1 && n == 1) return null;
-        if(t == n ) return head.next;
+        if (t == 1 && n == 1) return null;
+        if (t == n) return head.next;
 
-        ListNode prev = node(t-n-1,head);
+        ListNode prev = node(t - n - 1, head);
 
-        if(prev.next == last)
-            prev.next = null;
-
-        if(prev.next != null)
+        if (prev.next != null)
             prev.next = prev.next.next;
 
         return head;
     }
 
-    public static ListNode node(int index,ListNode head){
+    public static ListNode node(int index, ListNode head) {
         ListNode node = head;
         for (int i = 0; i < index; i++) {
             node = node.next;
