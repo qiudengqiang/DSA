@@ -1,2 +1,10 @@
 # Default ignored files
 /workspace.xml
+.idea/
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+target/
