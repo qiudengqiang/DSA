@@ -166,7 +166,7 @@ public class LinkedList<E> extends AbstractList<E> {
             if (i != 0) {
                 sb.append(",");
             }
-            sb.append(node.element);
+            sb.append(node);
             node = node.next;
         }
         sb.append("]");
