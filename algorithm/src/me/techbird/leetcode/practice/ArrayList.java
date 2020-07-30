@@ -20,6 +20,10 @@ public class ArrayList<E> extends AbstractList<E> {
             elements[i] = null;
         }
         size = 0;
+        //进行缩容操作
+        if(elements!=null && elements.length > DEFAULT_CAPACITY){
+            elements = (E[]) new Object[DEFAULT_CAPACITY];
+        }
     }
 
     /**
@@ -54,6 +58,19 @@ public class ArrayList<E> extends AbstractList<E> {
         System.out.println(oldCapacity + "扩容为：" + newCapacity);
     }
 
+    public void trim(){
+        int oldCapacity = elements.length;
+        //缩容一半
+        int newCapacity = oldCapacity >> 1;
+        if(size >= newCapacity || oldCapacity < DEFAULT_CAPACITY) return;
+        E[] newElements = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newElements[i] = elements[i];
+        }
+        elements = newElements;
+        System.out.println(oldCapacity + "缩容为：" + newCapacity);
+    }
+
     public E get(int index) {
         rangeCheck(index);
         return elements[index];
@@ -74,6 +91,7 @@ public class ArrayList<E> extends AbstractList<E> {
             elements[i - 1] = elements[i];
         }
         elements[--size] = null;
+        trim();
         return old;
     }
 
