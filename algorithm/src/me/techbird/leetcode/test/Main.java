@@ -1,9 +1,6 @@
 package me.techbird.leetcode.test;
 
-import me.techbird.leetcode.practice.ArrayList;
-import me.techbird.leetcode.practice.LinkedList;
-import me.techbird.leetcode.practice.List;
-import me.techbird.leetcode.practice.SingleCircleLinkedList;
+import me.techbird.leetcode.practice.*;
 import me.techbird.leetcode.tool.Asserts;
 
 public class Main {
@@ -44,6 +41,6 @@ public class Main {
 
 //        testList(new LinkedList<>());
 //        testList(new ArrayList<>());
-        testList(new SingleCircleLinkedList<>());
+        testList(new CircleLinkedList<>());
     }
 }
