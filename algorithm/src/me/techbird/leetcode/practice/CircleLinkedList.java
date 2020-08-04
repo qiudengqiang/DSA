@@ -8,6 +8,7 @@ package me.techbird.leetcode.practice;
 public class CircleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
     private Node<E> last;
+    private Node<E> current;
 
     private static class Node<E> {
         E element;
@@ -36,6 +37,28 @@ public class CircleLinkedList<E> extends AbstractList<E> {
             }
             return sb.toString();
         }
+    }
+
+    public void reset() {
+        current = first;
+    }
+
+    public E next() {
+        if (current == null) return null;
+        current = current.next;
+        return current.element;
+    }
+
+    public E remove() {
+        if (current == null) return null;
+        Node<E> next = current.next;
+        E element = remove(current);
+        if (size == 0) {
+            current = null;
+        } else {
+            current = next;
+        }
+        return element;
     }
 
     @Override
@@ -77,13 +100,15 @@ public class CircleLinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
+        E element = remove(node(index));
+        return element;
+    }
 
-        Node<E> node = first;
-        if(size == 1){
+    private E remove(Node<E> node) {
+        if (size == 1) {
             first = null;
             last = null;
-        }else{
-            node = node(index);
+        } else {
             Node<E> prev = node.prev;
             Node<E> next = node.next;
             prev.next = next;
@@ -157,7 +182,6 @@ public class CircleLinkedList<E> extends AbstractList<E> {
             }
             return node;
         }
-
     }
 
     @Override

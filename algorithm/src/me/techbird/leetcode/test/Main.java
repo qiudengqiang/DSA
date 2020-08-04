@@ -29,6 +29,19 @@ public class Main {
         System.out.println(list);
     }
 
+    public static void josephus() {
+        CircleLinkedList<Integer> list = new CircleLinkedList<>();
+        for (int i = 1; i <= 8; i++) {
+            list.add(i);
+        }
+        list.reset();
+        while (!list.isEmpty()) {
+            list.next();
+            list.next();
+            System.out.println(list.remove());
+        }
+    }
+
     public static void main(String[] args) {
 //        ArrayList<Person> list = new ArrayList<>();
 //        for (int i = 0; i < 50; i++) {
@@ -41,6 +54,7 @@ public class Main {
 
 //        testList(new LinkedList<>());
 //        testList(new ArrayList<>());
-        testList(new CircleLinkedList<>());
+//        testList(new CircleLinkedList<>());
+        josephus();
     }
 }
