@@ -1,4 +1,4 @@
-package me.techbird.leetcode.practice;
+package me.techbird.leetcode.zzz.list;
 
 public abstract class AbstractList<E> implements List<E> {
 

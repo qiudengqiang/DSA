@@ -1,4 +1,4 @@
-package me.techbird.leetcode.practice;
+package me.techbird.leetcode.zzz.list;
 
 /**
  * 双向链表实现

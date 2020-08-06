@@ -1,4 +1,4 @@
-package me.techbird.leetcode.practice;
+package me.techbird.leetcode.zzz.list;
 
 
 public class ArrayList<E> extends AbstractList<E> {

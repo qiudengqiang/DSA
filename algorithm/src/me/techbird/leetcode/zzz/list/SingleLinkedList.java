@@ -1,11 +1,6 @@
-package me.techbird.leetcode.practice;
+package me.techbird.leetcode.zzz.list;
 
-/**
- * 单向循环链表
- *
- * @param <E>
- */
-public class SingleCircleLinkedList<E> extends AbstractList<E> {
+public class SingleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
 
     private static class Node<E> {
@@ -15,13 +10,6 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
         public Node(E element, Node<E> next) {
             this.element = element;
             this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append(element).append("_").append(next.element);
-            return sb.toString();
         }
     }
 
@@ -35,40 +23,13 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
     public void add(int index, E element) {
         rangeCheckForAdd(index);
         if (index == 0) {
-            if(size == 0){
-                first =  new Node<>(element, first);
-            }else{
-                Node<E> newFirst = new Node<>(element, first);
-                Node<E> last = (size == 1) ? newFirst : node(size - 1);
-                last.next = newFirst;
-                first = newFirst;
-            }
+            first = new Node<>(element, first);
         } else {
             Node<E> prev = node(index - 1);
             prev.next = new Node<E>(element, prev.next);
         }
-        size++;
-    }
 
-    @Override
-    public E remove(int index) {
-        rangeCheck(index);
-        Node<E> node = first;
-        if (index == 0) {
-            if(size == 1){
-                first = null;
-            }else{
-                Node<E> last = node(size - 1);
-                first = first.next;
-                last.next = first;
-            }
-        } else {
-            Node<E> prev = node(index - 1);
-            node = prev.next;
-            prev.next = node.next;
-        }
-        size--;
-        return node.element;
+        size++;
     }
 
     @Override
@@ -82,6 +43,21 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
         E old = node.element;
         node.element = element;
         return old;
+    }
+
+    @Override
+    public E remove(int index) {
+        rangeCheck(index);
+        Node<E> node = first;
+        if (index == 0) {
+            first = first.next;
+        } else {
+            Node<E> prev = node(index - 1);
+            node = prev.next;
+            prev.next = node.next;
+        }
+        size--;
+        return node.element;
     }
 
     @Override
@@ -131,7 +107,7 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
             if (i != 0) {
                 sb.append(",");
             }
-            sb.append(node);
+            sb.append(node.element);
             node = node.next;
         }
         sb.append("]");

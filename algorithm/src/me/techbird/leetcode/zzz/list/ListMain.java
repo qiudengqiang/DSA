@@ -1,9 +1,8 @@
-package me.techbird.leetcode.test;
+package me.techbird.leetcode.zzz.list;
 
-import me.techbird.leetcode.practice.*;
 import me.techbird.leetcode.tool.Asserts;
 
-public class Main {
+public class ListMain {
 
     static void testList(List<Integer> list) {
         list.add(11);
