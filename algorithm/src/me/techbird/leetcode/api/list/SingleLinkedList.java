@@ -1,4 +1,4 @@
-package me.techbird.leetcode.zzz.list;
+package me.techbird.leetcode.api.list;
 
 public class SingleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;

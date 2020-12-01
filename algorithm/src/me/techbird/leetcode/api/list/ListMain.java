@@ -1,4 +1,4 @@
-package me.techbird.leetcode.zzz.list;
+package me.techbird.leetcode.api.list;
 
 import me.techbird.leetcode.tool.Asserts;
 

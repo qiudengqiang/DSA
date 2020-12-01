@@ -1,4 +1,4 @@
-package me.techbird.leetcode.zzz.stack;
+package me.techbird.leetcode.api.stack;
 
 public class StackMain {
     public static void main(String[] args) {

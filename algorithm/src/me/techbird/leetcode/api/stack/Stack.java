@@ -1,7 +1,7 @@
-package me.techbird.leetcode.zzz.stack;
+package me.techbird.leetcode.api.stack;
 
-import me.techbird.leetcode.zzz.list.ArrayList;
-import me.techbird.leetcode.zzz.list.List;
+import me.techbird.leetcode.api.list.ArrayList;
+import me.techbird.leetcode.api.list.List;
 
 public class Stack<E> {
     private List<E> list = new ArrayList<>();

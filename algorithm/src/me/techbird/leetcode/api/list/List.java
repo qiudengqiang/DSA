@@ -1,4 +1,4 @@
-package me.techbird.leetcode.zzz.list;
+package me.techbird.leetcode.api.list;
 
 public interface List<E> {
     static final int ELEMENT_NOT_FOUND = -1;

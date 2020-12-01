@@ -1,26 +1,39 @@
-package me.techbird.leetcode.zzz.list;
+package me.techbird.leetcode.api.list;
 
 /**
- * 单向循环链表
+ * 双向链表实现
  *
  * @param <E>
  */
-public class SingleCircleLinkedList<E> extends AbstractList<E> {
+public class LinkedList<E> extends AbstractList<E> {
     private Node<E> first;
+    private Node<E> last;
 
     private static class Node<E> {
         E element;
         Node<E> next;
+        Node<E> prev;
 
-        public Node(E element, Node<E> next) {
+        public Node(Node<E> prev, E element, Node<E> next) {
+            this.prev = prev;
             this.element = element;
             this.next = next;
         }
 
         @Override
         public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append(element).append("_").append(next.element);
+            StringBuffer sb = new StringBuffer();
+            if (prev != null) {
+                sb.append(prev.element);
+            } else {
+                sb.append("null");
+            }
+            sb.append("_").append(element).append("_");
+            if (next != null) {
+                sb.append(next.element);
+            } else {
+                sb.append("null");
+            }
             return sb.toString();
         }
     }
@@ -29,23 +42,32 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
     public void clear() {
         size = 0;
         first = null;
+        last = null;
     }
 
     @Override
     public void add(int index, E element) {
         rangeCheckForAdd(index);
-        if (index == 0) {
-            if(size == 0){
-                first =  new Node<>(element, first);
-            }else{
-                Node<E> newFirst = new Node<>(element, first);
-                Node<E> last = (size == 1) ? newFirst : node(size - 1);
-                last.next = newFirst;
-                first = newFirst;
+
+        if (index == size) {//往后面添加元素
+            Node<E> oldLast = last;
+            last = new Node<E>(oldLast, element, null);
+
+            if (oldLast == null) {//这是链表添加的第一个元素
+                first = last;
+            } else {
+                oldLast.next = last;
             }
         } else {
-            Node<E> prev = node(index - 1);
-            prev.next = new Node<E>(element, prev.next);
+            Node<E> next = node(index);
+            Node<E> prev = next.prev;
+            Node<E> node = new Node<E>(prev, element, next);
+            next.prev = node;
+            if (prev == null) {//index == 0
+                first = node;
+            } else {
+                prev.next = node;
+            }
         }
         size++;
     }
@@ -53,20 +75,23 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
-        Node<E> node = first;
-        if (index == 0) {
-            if(size == 1){
-                first = null;
-            }else{
-                Node<E> last = node(size - 1);
-                first = first.next;
-                last.next = first;
-            }
+
+        Node<E> node = node(index);
+        Node<E> prev = node.prev;
+        Node<E> next = node.next;
+
+        if (prev == null) {//index == 0
+            first = next;
         } else {
-            Node<E> prev = node(index - 1);
-            node = prev.next;
-            prev.next = node.next;
+            prev.next = next;
         }
+
+        if (next == null) {//index == size-1
+            last = prev;
+        } else {
+            next.prev = prev;
+        }
+
         size--;
         return node.element;
     }
@@ -108,18 +133,28 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
     }
 
     /**
-     * 查找链表中的Index节点
+     * 查找链表中的index节点
      *
      * @param index
      * @return
      */
     private Node<E> node(int index) {
         rangeCheck(index);
-        Node<E> node = first;
-        for (int i = 0; i < index; i++) {
-            node = node.next;
+
+        if (index < (size >> 1)) {
+            Node<E> node = first;
+            for (int i = 0; i < index; i++) {
+                node = node.next;
+            }
+            return node;
+        } else {
+            Node<E> node = last;
+            for (int i = size - 1; i > index; i--) {
+                node = node.prev;
+            }
+            return node;
         }
-        return node;
+
     }
 
     @Override

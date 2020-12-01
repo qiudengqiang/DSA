@@ -1,6 +1,6 @@
 package me.techbird.leetcode.stack;
 
-import me.techbird.leetcode.zzz.stack.Stack;
+import me.techbird.leetcode.api.stack.Stack;
 
 import java.util.HashMap;
 

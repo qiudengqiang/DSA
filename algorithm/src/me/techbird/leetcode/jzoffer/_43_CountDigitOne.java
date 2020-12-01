@@ -7,7 +7,7 @@ package me.techbird.leetcode.jzoffer;
 public class _43_CountDigitOne {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        System.out.println(f(1999));
+        System.out.println(countDigitOne(1999));
     }
 
     /**
@@ -20,7 +20,6 @@ public class _43_CountDigitOne {
     public static int countDigitOne(int n) {
         if (n <= 0) return 0;
         int count = 0;
-
         for (int i = 1; i <= n; i++) {
             String string = String.valueOf(i);
             if (string.contains("1")) {
@@ -32,11 +31,29 @@ public class _43_CountDigitOne {
                 }
             }
         }
-
         return count;
     }
 
-    //利用递归
+    //O(nlogn)
+    public static int count(int n){
+        int num = 0;
+        for (int i = 1; i <= n; i++) {
+            num += numberOf1(i);
+        }
+        return num;
+    }
+
+    private static int numberOf1(int i) {
+        int number=0;
+        while(i != 0){
+            if(i%10 == 1) number++;
+            i = i/10;
+        }
+        return 0;
+    }
+
+
+    //利用递归O(logn)
     public static int f(int n) {
         if (n <= 0) return 0;
         String string = String.valueOf(n);
