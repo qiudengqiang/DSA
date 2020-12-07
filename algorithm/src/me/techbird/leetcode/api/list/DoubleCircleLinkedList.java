@@ -1,13 +1,14 @@
 package me.techbird.leetcode.api.list;
 
 /**
- * 双向链表实现
+ * 双向循环链表实现
  *
  * @param <E>
  */
-public class LinkedList<E> extends AbstractList<E> {
+public class DoubleCircleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
     private Node<E> last;
+    private Node<E> current;//为约瑟夫问题定义
 
     private static class Node<E> {
         E element;
@@ -38,6 +39,28 @@ public class LinkedList<E> extends AbstractList<E> {
         }
     }
 
+    public void reset() {
+        current = first;
+    }
+
+    public E next() {
+        if (current == null) return null;
+        current = current.next;
+        return current.element;
+    }
+
+    public E remove() {
+        if (current == null) return null;
+        Node<E> next = current.next;
+        E element = remove(current);
+        if (size == 0) {
+            current = null;
+        } else {
+            current = next;
+        }
+        return element;
+    }
+
     @Override
     public void clear() {
         size = 0;
@@ -51,22 +74,24 @@ public class LinkedList<E> extends AbstractList<E> {
 
         if (index == size) {//往后面添加元素
             Node<E> oldLast = last;
-            last = new Node<E>(oldLast, element, null);
+            last = new Node<E>(oldLast, element, first);
 
             if (oldLast == null) {//这是链表添加的第一个元素
                 first = last;
+                first.prev = first;
+                first.next = first;
             } else {
                 oldLast.next = last;
+                first.prev = last;
             }
         } else {
             Node<E> next = node(index);
             Node<E> prev = next.prev;
             Node<E> node = new Node<E>(prev, element, next);
             next.prev = node;
-            if (prev == null) {//index == 0
+            prev.next = node;
+            if (next == first) {//index == 0
                 first = node;
-            } else {
-                prev.next = node;
             }
         }
         size++;
@@ -75,23 +100,26 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         rangeCheck(index);
+        E element = remove(node(index));
+        return element;
+    }
 
-        Node<E> node = node(index);
-        Node<E> prev = node.prev;
-        Node<E> next = node.next;
-
-        if (prev == null) {//index == 0
-            first = next;
+    private E remove(Node<E> node) {
+        if (size == 1) {
+            first = null;
+            last = null;
         } else {
+            Node<E> prev = node.prev;
+            Node<E> next = node.next;
             prev.next = next;
-        }
-
-        if (next == null) {//index == size-1
-            last = prev;
-        } else {
             next.prev = prev;
+            if (node == first) {//index == 0
+                first = next;
+            }
+            if (node == last) {//index == size-1
+                last = prev;
+            }
         }
-
         size--;
         return node.element;
     }
@@ -154,7 +182,6 @@ public class LinkedList<E> extends AbstractList<E> {
             }
             return node;
         }
-
     }
 
     @Override

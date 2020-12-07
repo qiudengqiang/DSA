@@ -2,7 +2,7 @@ package me.techbird.leetcode.api.list;
 
 import me.techbird.leetcode.tool.Asserts;
 
-public class ListMain {
+public class ListTest {
 
     static void testList(List<Integer> list) {
         list.add(11);
@@ -29,7 +29,7 @@ public class ListMain {
     }
 
     public static void josephus() {
-        CircleLinkedList<Integer> list = new CircleLinkedList<>();
+        DoubleCircleLinkedList<Integer> list = new DoubleCircleLinkedList<>();
         for (int i = 1; i <= 8; i++) {
             list.add(i);
         }

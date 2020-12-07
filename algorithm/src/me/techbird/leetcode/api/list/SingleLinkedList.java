@@ -1,5 +1,9 @@
 package me.techbird.leetcode.api.list;
 
+/**
+ * 单链表
+ * @param <E>
+ */
 public class SingleLinkedList<E> extends AbstractList<E> {
     private Node<E> first;
 

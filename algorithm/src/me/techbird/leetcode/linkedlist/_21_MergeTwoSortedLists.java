@@ -1,5 +1,6 @@
 package me.techbird.leetcode.linkedlist;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,40 +25,51 @@ public class _21_MergeTwoSortedLists {
         }
     }
 
+    /**
+     * 非递归方式
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
-        if(l1 == null) return l2;
-        if(l2 == null) return l1;
-        ListNode node = new ListNode(0);
-        ListNode cur = node;
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        ListNode node = new ListNode(-1);
+        ListNode current = node;
         while (l1 != null && l2 != null) {
             if (l2.val > l1.val) {
-                cur.next = l1;
+                current.next = l1;
                 l1 = l1.next;
-            }else{
-                cur.next  = l2;
+            } else {
+                current.next = l2;
                 l2 = l2.next;
             }
-            cur = cur.next;
-            //任一为空直接链接另一条链表
-            if(l1 == null){
-                cur.next = l2;
-            }else{
-                cur.next = l1;
-            }
+            current = current.next;
         }
+        //任一为空直接链接另一条链表
+        current.next = l1 == null ? l2 : l1;
         return node.next;
     }
 
+    /**
+     * 递归方式
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        while (l2 != null && l2.next != null) {
-            if (l2.val >= l1.val && l2.val < l1.next.val) {
-                ListNode node = new ListNode(l2.val);
-                node.next = l1.next;
-                l1.next = node;
-            }
-            l2 = l2.next;
+        if (l1 == null) {
+            return l2;
+        } else if (l2 == null) {
+            return l1;
+        } else if (l2.val < l1.val) {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        } else {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
         }
-
-        return l1;
     }
 }

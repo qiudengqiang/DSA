@@ -81,32 +81,23 @@ public class _224_BasicCalculator {
     public static int evalRPN(LinkedList<String> list) {
         Stack<Integer> stack = new Stack<>();
         for (String token : list) {
-            if(isNumeric(token)){
-                stack.push(Integer.parseInt(token));
-            }else{
-                Integer first, second;
-                switch (token) {
-                    case "+":
-                        first = stack.pop();
-                        second = stack.pop();
-                        stack.push(first + second);
-                        break;
-                    case "-":
-                        first = stack.pop();
-                        second = stack.pop();
-                        stack.push(second - first);
-                        break;
-                    case "*":
-                        first = stack.pop();
-                        second = stack.pop();
-                        stack.push(first * second);
-                        break;
-                    case "/":
-                        first = stack.pop();
-                        second = stack.pop();
-                        stack.push((int) Math.floor(second / first));
-                        break;
-                }
+            switch (token) {
+                case "+":
+                    stack.push(stack.pop() + stack.pop());
+                    break;
+                case "-":
+                    stack.push(-stack.pop() + stack.pop());
+                    break;
+                case "*":
+                    stack.push(stack.pop() * stack.pop());
+                    break;
+                case "/":
+                    Integer val = stack.pop();
+                    stack.push((int) Math.floor(stack.pop() / val));
+                    break;
+                default:
+                    stack.push(Integer.valueOf(token));
+                    break;
             }
         }
         return stack.pop();

@@ -55,7 +55,7 @@ public class ArrayList<E> extends AbstractList<E> {
             newElements[i] = elements[i];
         }
         elements = newElements;
-        System.out.println(oldCapacity + "扩容为：" + newCapacity);
+//        System.out.println(oldCapacity + "扩容为：" + newCapacity);
     }
 
     public void trim(){
@@ -68,7 +68,7 @@ public class ArrayList<E> extends AbstractList<E> {
             newElements[i] = elements[i];
         }
         elements = newElements;
-        System.out.println(oldCapacity + "缩容为：" + newCapacity);
+//        System.out.println(oldCapacity + "缩容为：" + newCapacity);
     }
 
     public E get(int index) {
@@ -115,7 +115,6 @@ public class ArrayList<E> extends AbstractList<E> {
         }
         return ELEMENT_NOT_FOUND;
     }
-
 
     @Override
     public String toString() {
