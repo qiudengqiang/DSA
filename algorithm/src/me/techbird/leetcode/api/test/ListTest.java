@@ -1,5 +1,7 @@
-package me.techbird.leetcode.api.list;
+package me.techbird.leetcode.api.test;
 
+import me.techbird.leetcode.api.list.DoubleCircleLinkedList;
+import me.techbird.leetcode.api.list.List;
 import me.techbird.leetcode.tool.Asserts;
 
 public class ListTest {

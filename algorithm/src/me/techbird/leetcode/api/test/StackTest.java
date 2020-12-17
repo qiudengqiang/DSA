@@ -1,6 +1,8 @@
-package me.techbird.leetcode.api.stack;
+package me.techbird.leetcode.api.test;
 
-public class StackMain {
+import me.techbird.leetcode.api.stack.Stack;
+
+public class StackTest {
     public static void main(String[] args) {
         Stack<Integer> stack = new Stack<>();
         stack.push(11);
