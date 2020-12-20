@@ -1,13 +1,13 @@
 package me.techbird.leetcode.api.test;
 
-import me.techbird.leetcode.api.tree.BinarySearchTree;
+import me.techbird.leetcode.api.tree.AVLTree;
+import me.techbird.leetcode.api.tree.BinaryTree;
 import me.techbird.leetcode.tool.printer.BinaryTrees;
 
 public class TreeTest {
     public static void main(String[] args) {
 
         test();
-
     }
 
     static void test() {
@@ -15,26 +15,17 @@ public class TreeTest {
                 7, 4, 2, 1, 3, 5, 9, 8, 11, 10, 12
         };
 
-        BinarySearchTree bst = new BinarySearchTree();
+        AVLTree<Integer> avl = new AVLTree<>();
         for (int i = 0; i < data.length; i++) {
-            bst.add(data[i]);
+            avl.add(data[i]);
         }
 
-        BinaryTrees.println(bst);
+        BinaryTrees.println(avl);
 
-        bst.inorderTraversal(new BinarySearchTree.Visitor<Integer>() {
+        avl.remove(2);
+        avl.remove(1);
+        BinaryTrees.println(avl);
+        
 
-            @Override
-            public boolean visit(Integer element) {
-//                System.out.print(element+ " ");
-                return false;
-            }
-        });
-
-//        System.out.println(bst.height());
-//        System.out.println(bst.isComplete());
-        bst.remove(1);
-        bst.remove(11);
-        BinaryTrees.println(bst);
     }
 }

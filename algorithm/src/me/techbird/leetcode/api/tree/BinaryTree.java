@@ -219,6 +219,10 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         }
     }
 
+    protected Node<E> createNode(E element, Node<E> parent) {
+        return new Node<>(element, parent);
+    }
+
     public static abstract class Visitor<E> {
         boolean stop;
 
@@ -248,6 +252,14 @@ public class BinaryTree<E> implements BinaryTreeInfo {
 
         public boolean hasTwoChild() {
             return this.left != null && this.right != null;
+        }
+
+        public boolean isLeftChild() {
+            return parent != null && this == parent.left;
+        }
+
+        public boolean isRightChild() {
+            return parent != null && this == parent.right;
         }
     }
 

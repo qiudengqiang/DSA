@@ -1,30 +1,27 @@
 package me.techbird.leetcode.api.tree;
 
-import me.techbird.leetcode.tool.printer.BinaryTreeInfo;
-
 import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * 二叉搜索/排序/查找树
  */
-public class BinarySearchTree<E> extends BinaryTree {
+public class BST<E> extends BinaryTree<E> {
     private Comparator<E> comparator;
 
-    public BinarySearchTree() {
+    public BST() {
         this(null);
     }
 
-    public BinarySearchTree(Comparator<E> comparator) {
+    public BST(Comparator<E> comparator) {
         this.comparator = comparator;
     }
 
     public void add(E element) {
         checkNotNullElement(element);
         if (root == null) {
-            root = new Node<>(element, null);
+            root = createNode(element, null);
             size++;
+            afterAdd(root);
             return;
         }
         Node parent = root;
@@ -42,15 +39,17 @@ public class BinarySearchTree<E> extends BinaryTree {
                 return;
             }
         }
-        Node<E> newNode = new Node<E>(element, parent);
+        Node<E> newNode = createNode(element, parent);
         if (cmp > 0) {
             parent.right = newNode;
         } else {
             parent.left = newNode;
         }
         size++;
+        afterAdd(newNode);
     }
 
+    protected void afterAdd(Node<E> node){}
 
     public void remove(E element) {
         remove(node(element));
@@ -81,16 +80,21 @@ public class BinarySearchTree<E> extends BinaryTree {
             } else {
                 node.parent.right = replacement;
             }
+            afterRemove(node);
         } else if (node.parent == null) {//node是叶子节点并且是根节点
             root = null;
+            afterRemove(node);
         } else {//node是叶子节点，但不是根节点
             if (node == node.parent.left) {
                 node.parent.left = null;
             } else {
                 node.parent.right = null;
             }
+            afterRemove(node);
         }
     }
+
+    protected void afterRemove(Node<E> node){}
 
     public boolean contains(E element) {
         return node(element) != null;
