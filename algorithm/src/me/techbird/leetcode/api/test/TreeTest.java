@@ -25,7 +25,7 @@ public class TreeTest {
         avl.remove(2);
         avl.remove(1);
         BinaryTrees.println(avl);
-        
+
 
     }
 }
