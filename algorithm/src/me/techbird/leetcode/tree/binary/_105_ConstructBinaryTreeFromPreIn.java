@@ -1,4 +1,6 @@
-package me.techbird.leetcode.tree;
+package me.techbird.leetcode.tree.binary;
+
+import me.techbird.leetcode.tree.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

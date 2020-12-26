@@ -1,4 +1,6 @@
-package me.techbird.leetcode.tree;
+package me.techbird.leetcode.tree.binary;
+
+import me.techbird.leetcode.tree.Node;
 
 import java.util.ArrayList;
 import java.util.List;

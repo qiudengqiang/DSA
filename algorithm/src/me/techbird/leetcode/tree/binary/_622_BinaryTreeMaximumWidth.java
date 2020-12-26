@@ -1,6 +1,7 @@
-package me.techbird.leetcode.tree;
+package me.techbird.leetcode.tree.binary;
 
 
+import me.techbird.leetcode.tree.TreeNode;
 
 /**
  * 662. 二叉树最大宽度 TODO

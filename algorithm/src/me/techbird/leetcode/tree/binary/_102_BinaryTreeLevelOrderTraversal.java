@@ -1,4 +1,6 @@
-package me.techbird.leetcode.tree;
+package me.techbird.leetcode.tree.binary;
+
+import me.techbird.leetcode.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,10 +8,10 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 107. 二叉树的层次遍历 II
- * https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
+ * 102. 二叉树的层序遍历
+ * https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
  */
-public class _107_BinaryTreeLevelOrderTraversalBottom {
+public class _102_BinaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
         TreeNode tree = new TreeNode(3);
         TreeNode left = new TreeNode(9);
@@ -51,4 +53,5 @@ public class _107_BinaryTreeLevelOrderTraversalBottom {
         }
         return list;
     }
+
 }
