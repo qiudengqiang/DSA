@@ -14,16 +14,16 @@ public class _114_BinaryTree2LikedList {
         List<TreeNode> list = new ArrayList<>();
         inorder(root, list);
         int size = list.size();
-        for(int i = 1; i<size;++i){
-            TreeNode prev = list.get(i-1);
+        for (int i = 1; i < size; ++i) {
+            TreeNode prev = list.get(i - 1);
             TreeNode curv = list.get(i);
             prev.left = null;
             prev.right = curv;
         }
     }
 
-    public void inorder(TreeNode node, List<TreeNode> list){
-        if(node == null) return;
+    public void inorder(TreeNode node, List<TreeNode> list) {
+        if (node == null) return;
         list.add(node);
         inorder(node.left, list);
         inorder(node.right, list);

@@ -24,7 +24,7 @@ public class _235_LowestCommonAncestorOfBST {
         if(root.val < p.val && root.val <q.val ){
            dfs(root.right, p, q);
         }else if(root.val > p.val && root.val >q.val){
-            dfs(root.left, p, q);
+           dfs(root.left, p, q);
         }else{
             ancestor = root;
         }
