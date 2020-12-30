@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 /**
- * 227.基本计算器-ii（中缀表达式求解）
+ * 224.基本计算器
  * https://leetcode-cn.com/problems/basic-calculator-ii/
  */
 public class _224_BasicCalculator {

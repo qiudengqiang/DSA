@@ -1,14 +1,101 @@
-LeetCode
-========
+## Required DataStructure
+
+- List
+
+  - SingleLikedList
+  - SingleCircleLinkedList
+  - DoubleLinkedList
+  - DoubleCircleLikedList
+
+- Queue
+
+  - Queue
+  - Deque
+  - CircleQueue
+  - CircleDeque
+
+- Stack
+
+  - Stack
+
+- Tree
+
+  - BinaryTree
+  - BST
+  - BBST
+  - AVL Tree
+  - RB Tree
+
+  
+
+## Required Algorithm
+
+- [Required DataStructure Algorithms](Required DataStructure Algorithms)
+
+## LeetCode Problems
+
+### Algorithm
+
+- Array
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 88   | [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) |          | Easy       |
+| 344  | [反转字符串](https://leetcode-cn.com/problems/reverse-string/) |          | Easy       |
+- jzoffer
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 3    | [数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) |          | Easy       |
+| 4    | [二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) |          | Medium     |
+| 43   | [1～n 整数中 1 出现的次数](https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/) |          | Medium     |
+| 53   | [0～n-1中缺失的数字](https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/) |          | Hard       |
+| 53-1 | [在排序数组中查找数字 I](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/) |          | Easy       |
+
+- LinkedList
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 9    | [回文数](https://leetcode-cn.com/problems/palindrome-number/) |          | Easy       |
+| 19   | [删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) |          | Medium     |
+| 21   | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) |          | Easy       |
+| 83   | [删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) |          | Easy       |
+| 141  | [环形链表](https://leetcode-cn.com/problems/linked-list-cycle/) |          | Easy       |
+| 203  | [移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/) |          | Easy       |
+| 206  | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) |          | Easy       |
+| 237  | [删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |          | Easy       |
+| 876  | [链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/) |          | Easy       |
+
+- Queue
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 225  | [用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) |          | Easy       |
+| 232  | [用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) |          | Easy       |
+
+- Recursion
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 509  | [斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |          | Easy       |
+
+- Stack
+
+| #    | Title                                                        | Solution | Difficulty |
+| ---- | ------------------------------------------------------------ | -------- | ---------- |
+| 150  | [逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) |          | Medium     |
+| 224  | [基本计算器](https://leetcode-cn.com/problems/basic-calculator/) |          | Hard       |
+| 227  | [基本计算器 II](https://leetcode-cn.com/problems/basic-calculator-ii/) |          | Medium     |
+| 20   | [有效的括号](https://leetcode-cn.com/problems/valid-parentheses/) |          | Easy       |
+
+- Tree
 
 
-### LeetCode Algorithm
-
-| # | Title | Solution | Difficulty |
-|---| ----- | -------- | ---------- |
 
 
-### LeetCode Database
+
+### Database
+
 | # | Title | Solution | Difficulty |
 |---| ----- | -------- | ---------- |
 |175|[combine two tables](https://leetcode.com/problems/combine-two-tables/)| [mysql](./database/mysql/combine-two-tables/combine-two-tables.sql)|Easy|
@@ -24,8 +111,8 @@ LeetCode
 |627|[swap salary](https://leetcode.com/problems/swap-salary/)| [mysql](./database/mysql/swap-salary/swap-salary.sql)|Easy|
 
 
-### LeetCode Shell
-| # | Title | Solution | Difficulty |
-|---| ----- | -------- | ---------- |
+
+### Shell
+
 
 
