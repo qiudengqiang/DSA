@@ -49,7 +49,8 @@ public class BST<E> extends BinaryTree<E> {
         afterAdd(newNode);
     }
 
-    protected void afterAdd(Node<E> node){}
+    protected void afterAdd(Node<E> node) {
+    }
 
     public void remove(E element) {
         remove(node(element));
@@ -80,21 +81,22 @@ public class BST<E> extends BinaryTree<E> {
             } else {
                 node.parent.right = replacement;
             }
-            afterRemove(node);
+            afterRemove(node, replacement);
         } else if (node.parent == null) {//node是叶子节点并且是根节点
             root = null;
-            afterRemove(node);
+            afterRemove(node, null);
         } else {//node是叶子节点，但不是根节点
             if (node == node.parent.left) {
                 node.parent.left = null;
             } else {
                 node.parent.right = null;
             }
-            afterRemove(node);
+            afterRemove(node, null);
         }
     }
 
-    protected void afterRemove(Node<E> node){}
+    protected void afterRemove(Node<E> node, Node<E> replacement) {
+    }
 
     public boolean contains(E element) {
         return node(element) != null;
