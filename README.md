@@ -30,7 +30,7 @@
 
 ## Required Algorithm
 
-- [Required DataStructure Algorithms](./Required DataStructure Algorithm.md)
+- [Required DataStructure Algorithms](./Required%20DataStructure%20Algorithm.md)
 
 ## LeetCode Problems
 
