@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeMap<K, V> implements Map<K, V> {
-    private static final boolean BLACK = true;
     private static final boolean RED = false;
+    private static final boolean BLACK = true;
     private int size;
     private Node<K, V> root;
     private Comparator<K> comparator;
@@ -21,7 +21,7 @@ public class TreeMap<K, V> implements Map<K, V> {
     }
 
     public int size() {
-        return 0;
+        return size;
     }
 
     public boolean isEmpty() {
@@ -39,13 +39,13 @@ public class TreeMap<K, V> implements Map<K, V> {
         if (root == null) {
             root = new Node<>(key, value, null);
             size++;
-            afterAdd(root);
+            afterPut(root);
             return null;
         }
         Node<K, V> parent = root;
         Node<K, V> node = root;
         int cmp = 0;
-        while (node != null) {
+        do{
             cmp = compare(key, node.key);
             parent = node;
             if (cmp < 0) {
@@ -58,7 +58,7 @@ public class TreeMap<K, V> implements Map<K, V> {
                 node.value = value;
                 return oldVal;
             }
-        }
+        }while (node != null);
         Node<K, V> newNode = new Node<>(key, value, parent);
         if (cmp > 0) {
             parent.right = newNode;
@@ -66,11 +66,11 @@ public class TreeMap<K, V> implements Map<K, V> {
             parent.left = newNode;
         }
         size++;
-        afterAdd(newNode);
+        afterPut(newNode);
         return null;
     }
 
-    private void afterAdd(Node<K, V> node) {
+    private void afterPut(Node<K, V> node) {
         Node<K, V> parent = node.parent;
         // 添加的是根节点 或者 上溢达到了根节点
         if (parent == null) {
@@ -87,7 +87,7 @@ public class TreeMap<K, V> implements Map<K, V> {
             black(parent);
             black(uncle);
             //[B树节点上溢]
-            afterAdd(grand);
+            afterPut(grand);
             return;
         }
 
