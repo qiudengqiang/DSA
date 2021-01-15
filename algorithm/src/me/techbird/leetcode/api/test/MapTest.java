@@ -1,6 +1,7 @@
 package me.techbird.leetcode.api.test;
 
 import me.techbird.leetcode.api.map.HashMap;
+import me.techbird.leetcode.api.map.LinkedHashMap;
 import me.techbird.leetcode.api.map.Map;
 import me.techbird.leetcode.api.map.TreeMap;
 import me.techbird.leetcode.api.model.Key;
@@ -14,10 +15,10 @@ import me.techbird.leetcode.tool.file.Files;
 public class MapTest {
     public static void main(String[] args) {
         test1();
-//        test2(new HashMap<>());
-//        test3(new HashMap<>());
-//        test4(new HashMap<>());
-//        test5(new HashMap<>());
+        test2(new LinkedHashMap<>());
+        test3(new LinkedHashMap<>());
+        test4(new LinkedHashMap<>());
+        test5(new LinkedHashMap<>());
     }
 
     static void test1Map(Map<String, Integer> map, String[] words) {
@@ -44,7 +45,7 @@ public class MapTest {
     }
 
     static void test1() {
-        String filepath = "/Users/qiudengqiang/Desktop/src/java/util/concurrent";
+        String filepath = "/Users/qiudengqiang/Desktop/src/java/util";
         FileInfo fileInfo = Files.read(filepath, null);
         String[] words = fileInfo.words();
 
@@ -53,6 +54,7 @@ public class MapTest {
         System.out.println("-------------------------------------");
         test1Map(new TreeMap<>(), words);
         test1Map(new HashMap<>(), words);
+        test1Map(new LinkedHashMap<>(), words);
 
     }
 

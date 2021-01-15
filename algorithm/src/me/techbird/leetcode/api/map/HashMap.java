@@ -46,7 +46,7 @@ public class HashMap<K, V> implements Map<K, V> {
         //取出index位置的红黑树根节点
         Node<K, V> root = table[index];
         if (root == null) {
-            root = new Node<>(key, value, null);
+            root = createNode(key, value, null);
             table[index] = root;
             size++;
             fixAfterPut(root);
@@ -104,7 +104,7 @@ public class HashMap<K, V> implements Map<K, V> {
         } while (node != null);
 
         //看看插入到父节点的哪一个位置
-        Node<K, V> newNode = new Node<>(key, value, parent);
+        Node<K, V> newNode = createNode(key, value, parent);
         if (cmp > 0) {
             parent.right = newNode;
         } else {
@@ -114,6 +114,10 @@ public class HashMap<K, V> implements Map<K, V> {
         //新添加节点之后的处理
         fixAfterPut(newNode);
         return null;
+    }
+
+    protected Node<K, V> createNode(K key, V value, Node<K, V> parent) {
+        return new Node<K, V>(key, value, parent);
     }
 
     private Node<K, V> node(K key) {
@@ -402,7 +406,7 @@ public class HashMap<K, V> implements Map<K, V> {
         }
     }
 
-    private void afterRemove(Node<K, V> willNode, Node<K, V> removeNode) {
+    protected void afterRemove(Node<K, V> willNode, Node<K, V> removeNode) {
     }
 
     private void fixAfterRemove(Node<K, V> node) {
@@ -637,9 +641,7 @@ public class HashMap<K, V> implements Map<K, V> {
 
         @Override
         public String toString() {
-            return "Node(" + key +
-                    "_" + value +
-                    ')';
+            return "Node" + "_" + key + "_" + value;
         }
     }
 }
