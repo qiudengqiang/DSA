@@ -2,31 +2,36 @@
 
 - List
 
-  - [SingleLikedList](./algorithm/src/me/techbird/leetcode/api/list/SingleLinkedList.java)
-  - SingleCircleLinkedList
-  - DoubleLinkedList
-  - DoubleCircleLikedList
-
+  - [SingleLikedList](./algorithm/src/me/techbird/api/list/SingleLinkedList.java)
+  - [SingleCircleLinkedList](./algorithm/src/me/techbird/api/list/SingleCircleLinkedList.java)
+  - [DoubleLinkedList](./algorithm/src/me/techbird/api/list/DoubleLinkedList.java)
+  - [DoubleCircleLinkedList](./algorithm/src/me/techbird/api/list/DoubleCircleLinkedList.java)
 - Queue
 
-  - Queue
-  - Deque
-  - CircleQueue
-  - CircleDeque
-
+  - [Queue](./algorithm/src/me/techbird/api/queue/Queue.java)
+  - [Deque](./algorithm/src/me/techbird/api/queue/Deque.java)
+  - [CircleQueue](./algorithm/src/me/techbird/api/queue/CircleQueue.java)
+  - [CircleDeque](./algorithm/src/me/techbird/api/queue/CircleDeque.java)
 - Stack
 
-  - Stack
-
+  - [Stack](./algorithm/src/me/techbird/api/stack/Stack.java)
 - Tree
 
-  - BinaryTree
-  - BST
-  - BBST
-  - AVL Tree
-  - RB Tree
+  - [BinaryTree](./algorithm/src/me/techbird/api/tree/BinaryTree.java)
+  - [BST](./algorithm/src/me/techbird/api/tree/BinaryTree.java)
+  - [BBST](./algorithm/src/me/techbird/api/tree/BST.java)
+  - [AVL Tree](./algorithm/src/me/techbird/api/tree/AVLTree.java)
+  - [RB Tree](./algorithm/src/me/techbird/api/tree/RBTree.java)
 
-  
+- Set
+  - [HashSet](./algorithm/src/me/techbird/api/set/HashSet.java)
+  - [LinkedHashSet](./algorithm/src/me/techbird/api/set/LinkedHashSet.java)
+  - [ListSet](./algorithm/src/me/techbird/api/set/ListSet.java)
+  - [TreeSet](./algorithm/src/me/techbird/api/set/TreeSet.java)
+- Map
+  - [HashMap](./algorithm/src/me/techbird/api/map/HashMap.java)
+  - [LinkedHashMap](./algorithm/src/me/techbird/api/map/LinkedHashMap.java)
+  - [TreeMap](./algorithm/src/me/techbird/api/map/TreeMap.java)
 
 ## Required Algorithm
 
@@ -40,8 +45,8 @@
 
 | #    | Title                                                        | Solution                                                     | Difficulty |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
-| 88   | [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) | [Java](./algorithm/src/me/techbird/leetcode/array/_88_MergeTwoSortedArray.java) | Easy       |
-| 344  | [反转字符串](https://leetcode-cn.com/problems/reverse-string/) | [Java](./algorithm/src/me/techbird/leetcode/array/_344_ReverseString.java) | Easy       |
+| 88   | [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/) | [Java](./algorithm/src/me/techbird/array/_88_MergeTwoSortedArray.java) | Easy       |
+| 344  | [反转字符串](https://leetcode-cn.com/problems/reverse-string/) | [Java](./algorithm/src/me/techbird/array/_344_ReverseString.java) | Easy       |
 - jzoffer
 
 | #    | Title                                                        | Solution | Difficulty |
