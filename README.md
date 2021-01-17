@@ -18,8 +18,8 @@
 - Tree
 
   - [BinaryTree](./algorithm/src/me/techbird/api/tree/BinaryTree.java)
-  - [BST](./algorithm/src/me/techbird/api/tree/BinaryTree.java)
-  - [BBST](./algorithm/src/me/techbird/api/tree/BST.java)
+  - [BST](./algorithm/src/me/techbird/api/tree/BST.java)
+  - [BBST](./algorithm/src/me/techbird/api/tree/BBST.java)
   - [AVL Tree](./algorithm/src/me/techbird/api/tree/AVLTree.java)
   - [RB Tree](./algorithm/src/me/techbird/api/tree/RBTree.java)
 
