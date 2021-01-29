@@ -31,9 +31,9 @@ public class Trie<V> {
 
     public V add(String key, V value) {
         checkKey(key);
-
+        //创建根节点
         if (root == null) {
-            root = new Node<>();
+            root = new Node<>(null);
         }
         Node<V> node = root;
         int len = key.length();
@@ -42,7 +42,8 @@ public class Trie<V> {
             boolean emptyChildren = node.children == null;
             Node<V> childrenNode = emptyChildren ? null : node.children.get(c);
             if (childrenNode == null) {
-                childrenNode = new Node<>();
+                childrenNode = new Node<>(node);
+                childrenNode.character = c;
                 node.children = emptyChildren ? new HashMap<>() : node.children;
                 node.children.put(c, childrenNode);
             }
@@ -54,7 +55,7 @@ public class Trie<V> {
             node.value = value;
             return oldValue;
         }
-
+        //新增一个单词
         node.word = true;
         node.value = value;
         size++;
@@ -62,7 +63,29 @@ public class Trie<V> {
     }
 
     public V remove(String key) {
+        // 找到最后一个节点
+        Node<V> node = node(key);
+        // 如果不是单词结尾，不用作任何处理
+        if (node == null || !node.word) return null;
+        size--;
+        V oldValue = node.value;
 
+        // 如果还有子节点
+        if (node.children != null && !node.children.isEmpty()) {
+            node.word = false;
+            node.value = null;
+            return oldValue;
+        }
+
+        // 如果没有子节点
+        Node<V> parent = null;
+        while ((parent = node.parent) != null) {
+            parent.children.remove(node.character);
+            if (parent.word || !parent.children.isEmpty()) break;
+            node = parent;
+        }
+
+        return oldValue;
     }
 
     public boolean startsWith(String prefix) {
@@ -88,8 +111,14 @@ public class Trie<V> {
     }
 
     private static class Node<V> {
+        Node<V> parent;
+        Character character;
         HashMap<Character, Node<V>> children;
         V value;
         boolean word;// 是否为单词的结尾（是否为一个完整的单词）
+
+        public Node(Node<V> parent) {
+            this.parent = parent;
+        }
     }
 }
