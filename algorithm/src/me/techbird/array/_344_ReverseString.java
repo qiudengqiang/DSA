@@ -14,7 +14,7 @@ public class _344_ReverseString {
 
     public static char[] reverseString(char[] s) {
         int len = s.length;
-        for (int i = 0; i < len / 2; i++) {
+        for (int i = 0; i < (len >> 1); i++) {
             char temp = s[i];
             s[i] = s[len - 1 - i];
             s[len - 1 - i] = temp;

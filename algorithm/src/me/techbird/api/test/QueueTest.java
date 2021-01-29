@@ -1,12 +1,27 @@
 package me.techbird.api.test;
 
-import me.techbird.api.queue.CircleDeque;
-import me.techbird.api.queue.CircleQueue;
-import me.techbird.api.queue.Deque;
-import me.techbird.api.queue.Queue;
+import me.techbird.api.model.Person;
+import me.techbird.api.queue.*;
 
 public class QueueTest {
     public static void main(String[] args) {
+        test2();
+    }
+
+    static void test2() {
+        PriorityQueue<Person> queue = new PriorityQueue<>();
+        queue.enQueue(new Person("jack", 1));
+        queue.enQueue(new Person("hary", 2));
+        queue.enQueue(new Person("henry", 5));
+        queue.enQueue(new Person("carry", 10));
+        System.out.println(queue.size());
+        int len = queue.size();
+        for (int i = 0; i < len; i++) {
+            System.out.println(queue.deQueue());
+        }
+    }
+
+    static void test() {
         Queue<Integer> queue = new Queue<Integer>();
         Deque<Integer> deque = new Deque<Integer>();
         CircleQueue<Integer> circleQueue = new CircleQueue<Integer>();
