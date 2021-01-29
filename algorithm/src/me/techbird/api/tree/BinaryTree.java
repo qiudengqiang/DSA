@@ -4,6 +4,7 @@ import me.techbird.tool.printer.BinaryTreeInfo;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinaryTree<E> implements BinaryTreeInfo {
 
@@ -35,6 +36,42 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         preorderTraversal(node.right, visitor);
     }
 
+    public void preorderNonRecursion(Visitor<E> visitor) {
+        if (visitor == null || root == null) return;
+        Stack<Node<E>> stack = new Stack<>();
+        Node<E> node = root;
+        while (true) {
+            if (node != null) {
+                if (visitor.visit(node.element)) return;
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
+                node = node.left;
+            } else {
+                if (stack.isEmpty()) return;
+                //处理右边
+                node = stack.pop();
+            }
+        }
+    }
+
+    public void preorderNonRecursion2(Visitor<E> visitor) {
+        if (visitor == null || root == null) return;
+        Stack<Node<E>> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node<E> node = stack.pop();
+
+            if (visitor.visit(node.element)) return;
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+    }
+
     public void inorderTraversal(Visitor<E> visitor) {
         if (visitor == null || visitor.stop) return;
         inorderTraversal(root, visitor);
@@ -46,6 +83,45 @@ public class BinaryTree<E> implements BinaryTreeInfo {
         inorderTraversal(node.left, visitor);
         visitor.stop = visitor.visit(node.element);
         inorderTraversal(node.right, visitor);
+    }
+
+
+    public void inorderNonRecursion(Visitor<E> visitor) {
+        if (visitor == null || root == null) return;
+        Stack<Node<E>> stack = new Stack<>();
+        Node<E> node = root;
+        while (true) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                if (stack.isEmpty()) return;
+                node = stack.pop();
+                if(visitor.visit(node.element)) return;
+                node = node.right;
+            }
+        }
+    }
+
+    public void postorderNonRecursion(Visitor<E> visitor) {
+        if (visitor == null || root == null) return;
+        Stack<Node<E>> stack = new Stack<>();
+        stack.push(root);
+        Node<E> prev = null;
+        while(!stack.isEmpty()){
+            Node<E> top = stack.peek();
+            if(top.isLeaf() || (prev != null && prev.parent == top)){
+                prev = stack.pop();
+                if(visitor.visit(prev.element)) return;
+            }else{
+                if(top.right!=null){
+                    stack.push(top.right);
+                }
+                if(top.left!=null){
+                    stack.push(top.left);
+                }
+            }
+        }
     }
 
     public void postorderTraversal(Visitor<E> visitor) {
@@ -262,11 +338,11 @@ public class BinaryTree<E> implements BinaryTreeInfo {
             return parent != null && this == parent.right;
         }
 
-        public Node<E> sibling(){
-            if(isLeftChild()){
+        public Node<E> sibling() {
+            if (isLeftChild()) {
                 return parent.right;
             }
-            if(isRightChild()){
+            if (isRightChild()) {
                 return parent.left;
             }
             return null;
