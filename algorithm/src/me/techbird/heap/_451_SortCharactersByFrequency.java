@@ -1,6 +1,9 @@
 package me.techbird.heap;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * 451. 根据字符出现频率排序
@@ -9,6 +12,7 @@ import java.util.*;
 public class _451_SortCharactersByFrequency {
 
     public String frequencySort(String s) {
+
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             Character c = s.charAt(i);
@@ -18,7 +22,7 @@ public class _451_SortCharactersByFrequency {
         PriorityQueue<Character> heap = new PriorityQueue<>(new Comparator<Character>() {
             @Override
             public int compare(Character o1, Character o2) {
-                return map.get(o1) - map.get(o2);
+                return map.get(o2) - map.get(o1);
             }
         });
 
@@ -35,6 +39,6 @@ public class _451_SortCharactersByFrequency {
             }
         }
 
-        return sb.reverse().toString();
+        return sb.toString();
     }
 }

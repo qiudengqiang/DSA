@@ -17,7 +17,7 @@ public class _692_TopKFrequentWord {
         PriorityQueue<String> heap = new PriorityQueue<>(new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
-                return map.get(o1).equals(map.get(o2)) ? o2.compareTo(o1) : map.get(o1) - map.get(o2);
+                return map.get(o1).equals(map.get(o2)) ? o2.compareTo(o1) : map.get(o2) - map.get(o1);
             }
         });
 
@@ -29,7 +29,6 @@ public class _692_TopKFrequentWord {
 
         List<String> list = new ArrayList();
         while (!heap.isEmpty()) list.add(heap.poll());
-        Collections.reverse(list);
         return list;
     }
 }
