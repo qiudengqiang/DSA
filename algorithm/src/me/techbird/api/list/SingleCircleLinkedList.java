@@ -39,6 +39,7 @@ public class SingleCircleLinkedList<E> extends AbstractList<E> {
                 first =  new Node<>(element, first);
             }else{
                 Node<E> newFirst = new Node<>(element, first);
+                //避免只有一个节点的情况下循环指向
                 Node<E> last = (size == 1) ? newFirst : node(size - 1);
                 last.next = newFirst;
                 first = newFirst;

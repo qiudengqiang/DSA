@@ -23,7 +23,7 @@ public class _863_MiddleNode {
     }
 
     /**
-     * 时间复杂度:O(n)
+     * 时间复杂度:O(n+m)
      * 空间复杂度:O(1)
      *
      * @param head

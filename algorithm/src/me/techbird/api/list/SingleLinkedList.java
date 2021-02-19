@@ -2,6 +2,7 @@ package me.techbird.api.list;
 
 /**
  * 单链表
+ *
  * @param <E>
  */
 public class SingleLinkedList<E> extends AbstractList<E> {
@@ -32,7 +33,6 @@ public class SingleLinkedList<E> extends AbstractList<E> {
             Node<E> prev = node(index - 1);
             prev.next = new Node<E>(element, prev.next);
         }
-
         size++;
     }
 

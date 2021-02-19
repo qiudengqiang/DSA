@@ -1,7 +1,7 @@
 package me.techbird.api.list;
 
 public interface List<E> {
-    static final int ELEMENT_NOT_FOUND = -1;
+    int ELEMENT_NOT_FOUND = -1;
 
     int size();
 

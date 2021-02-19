@@ -5,10 +5,6 @@ package me.techbird.linkedlist;
  * https://leetcode-cn.com/problems/reverse-linked-list/
  */
 public class _206_ReverseSinglyLinkedList {
-    public static void main(String[] args) {
-
-    }
-
     /**
      * 递归方式
      * 思路需要画图
@@ -28,7 +24,7 @@ public class _206_ReverseSinglyLinkedList {
     }
 
     /**
-     * 非递归方式
+     * 非递归方式1
      * @param head
      * @return
      */
@@ -44,4 +40,5 @@ public class _206_ReverseSinglyLinkedList {
         }
         return newHead;
     }
+
 }
