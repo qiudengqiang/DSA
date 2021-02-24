@@ -1,7 +1,8 @@
 package me.techbird.api.stack;
 
-import me.techbird.api.list.ArrayList;
-import me.techbird.api.list.List;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Stack<E> {
     private List<E> list = new ArrayList<>();
