@@ -29,12 +29,12 @@ public class HeapSort<T extends Comparable<T>> extends Sort<T> {
 
             int rightIndex = childIndex + 1;
             //右子节点比左子节点大
-            if (rightIndex < heapSize && cmpElement(array[rightIndex], child) > 0) {
+            if (rightIndex < heapSize && cmp(array[rightIndex], child) > 0) {
                 child = array[childIndex = rightIndex];
             }
 
             // 大于等于子节点
-            if (cmpElement(element, child) >= 0) break;
+            if (cmp(element, child) >= 0) break;
 
             array[index] = child;
             index = childIndex;

@@ -44,7 +44,7 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T
         return array[i1].compareTo(array[i2]);
     }
 
-    protected int cmpElement(T v1, T v2) {
+    protected int cmp(T v1, T v2) {
         cmpCount++;
         return v1.compareTo(v2);
     }
