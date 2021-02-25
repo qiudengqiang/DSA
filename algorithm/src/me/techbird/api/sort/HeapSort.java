@@ -1,6 +1,6 @@
 package me.techbird.api.sort;
 
-public class HeapSort extends Sort {
+public class HeapSort<T extends Comparable<T>> extends Sort<T> {
     private int heapSize;
 
     @Override
@@ -20,12 +20,12 @@ public class HeapSort extends Sort {
     }
 
     private void siftDown(int index) {
-        int element = array[index];
+        T element = array[index];
         int half = heapSize >> 1;
         while (index < half) {//index节点必须是非叶子节点
             //默认左边节点跟父节点比
             int childIndex = (index << 1) + 1;
-            int child = array[childIndex];
+            T child = array[childIndex];
 
             int rightIndex = childIndex + 1;
             //右子节点比左子节点大

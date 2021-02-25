@@ -3,7 +3,7 @@ package me.techbird.api.sort;
 /**
  * 普通冒泡排序
  */
-public class BubbleSort1 extends Sort {
+public class BubbleSort1<T extends Comparable<T>> extends Sort<T> {
     @Override
     protected void sort() {
         for (int end = array.length - 1; end > 0; end--) {
