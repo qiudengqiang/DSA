@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class SortTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(10000, 1, 1);
+        Integer[] array = Integers.random(50000, 1, 50000);
         testSorts(array,
                 new QuickSort(),
                 new MergeSort(),
@@ -19,6 +19,7 @@ public class SortTest {
 //                new InsertionSort3(),
 //                new BubbleSort3(),
 //                new SelectionSort(),
+                new ShellSort(),
                 new HeapSort()
         );
     }
