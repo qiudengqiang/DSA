@@ -8,15 +8,17 @@ import java.util.Arrays;
 
 public class SortTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(10000, 1, 20000);
+        Integer[] array = Integers.random(10000, 1, 1);
         testSorts(array,
-                new BubbleSort1(),
-                new BubbleSort2(),
-                new InsertionSort1(),
-                new InsertionSort2(),
-                new InsertionSort3(),
-                new BubbleSort3(),
-                new SelectionSort(),
+                new QuickSort(),
+                new MergeSort(),
+//                new BubbleSort1(),
+//                new BubbleSort2(),
+//                new InsertionSort1(),
+//                new InsertionSort2(),
+//                new InsertionSort3(),
+//                new BubbleSort3(),
+//                new SelectionSort(),
                 new HeapSort()
         );
     }
