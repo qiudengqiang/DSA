@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class SortTest {
     public static void main(String[] args) {
-        Integer[] array = Integers.random(50000, 1, 50000);
+        Integer[] array = Integers.random(10000, 1, 20000);
         testSorts(array,
 
                 new QuickSort(),
@@ -28,8 +28,8 @@ public class SortTest {
 //                new ShellSort(),
                 new HeapSort(),
                 new CountingSort(),
-                new RadixSort()
-//                new BucketSort()
+                new RadixSort(),
+                new BucketSort()
         );
     }
 

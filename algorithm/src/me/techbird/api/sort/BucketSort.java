@@ -1,5 +1,6 @@
 package me.techbird.api.sort;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * @param <T>
  */
 public class BucketSort<T extends Comparable<T>> extends Sort<T> {
-    private int DEFAULT_CAPACITY = 4 << 1;
+    private static final int DEFAULT_CAPACITY =  1 << 4;
 
     @Override
     protected void sort() {
@@ -23,8 +24,7 @@ public class BucketSort<T extends Comparable<T>> extends Sort<T> {
             bucket.add(array[i]);
         }
 
-
-        //对每个桶进行排序
+        //对每个桶进行排序,再放置回原来的数组
         int index = 0;
         for (int i = 0; i < buckets.length; i++) {
             if (buckets[i] == null) continue;
@@ -33,6 +33,8 @@ public class BucketSort<T extends Comparable<T>> extends Sort<T> {
                 array[index++] = v;
             }
         }
+
+        //TODO 对每个桶排序后直接添加到数组中，不能保证所有元素是升序的
     }
 
     private int index(T key) {
