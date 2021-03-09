@@ -16,8 +16,8 @@ public class SortTest {
         Integer[] array = Integers.random(50000, 1, 50000);
         testSorts(array,
 
-//                new QuickSort(),
-//                new MergeSort(),
+                new QuickSort(),
+                new MergeSort(),
 //                new BubbleSort1(),
 //                new BubbleSort2(),
 //                new InsertionSort1(),
@@ -26,8 +26,9 @@ public class SortTest {
 //                new BubbleSort3(),
 //                new SelectionSort(),
 //                new ShellSort(),
-//                new HeapSort(),
-                new CountingSort()
+                new HeapSort(),
+                new CountingSort(),
+                new RadixSort()
         );
     }
 
