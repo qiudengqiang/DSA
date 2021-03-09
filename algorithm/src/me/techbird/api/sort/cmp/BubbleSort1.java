@@ -1,20 +1,19 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 /**
- * 对数据全部有序情况做优化的冒泡排序
+ * 普通冒泡排序
  */
-public class BubbleSort2 extends Sort {
+public class BubbleSort1<T extends Comparable<T>> extends Sort<T> {
     @Override
     protected void sort() {
         for (int end = array.length - 1; end > 0; end--) {
-            boolean sorted = true;
             for (int begin = 1; begin <= end; begin++) {
                 if (cmp(begin, begin - 1) < 0) {
                     swap(begin, begin - 1);
-                    sorted = false;
                 }
             }
-            if (sorted) break;
         }
     }
 }

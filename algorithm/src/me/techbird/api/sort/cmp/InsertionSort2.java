@@ -1,4 +1,6 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 /**
  * 优化：先比较寻找位置搬运数据后,再插入。的插入排序

@@ -1,4 +1,6 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

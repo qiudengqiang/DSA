@@ -1,4 +1,6 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 public class HeapSort<T extends Comparable<T>> extends Sort<T> {
     private int heapSize;

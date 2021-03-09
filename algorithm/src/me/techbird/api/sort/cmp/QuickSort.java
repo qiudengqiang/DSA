@@ -1,4 +1,6 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 public class QuickSort<T extends Comparable<T>> extends Sort<T> {
     @Override
@@ -36,6 +38,8 @@ public class QuickSort<T extends Comparable<T>> extends Sort<T> {
         //让end指向最后一个元素
         end--;
 
+
+        //TODO 在遇到左右交替扫描的场景时都可以考虑这种 while 嵌套模板
         while (begin < end) {
             while (begin < end) {
                 if (cmp(pivot, array[end]) < 0) {

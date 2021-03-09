@@ -1,17 +1,23 @@
 package me.techbird.api.test;
 
 import me.techbird.api.sort.*;
+import me.techbird.api.sort.cmp.HeapSort;
+import me.techbird.api.sort.cmp.MergeSort;
+import me.techbird.api.sort.cmp.QuickSort;
+import me.techbird.api.sort.cmp.ShellSort;
 import me.techbird.tool.Asserts;
 import me.techbird.tool.Integers;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class SortTest {
     public static void main(String[] args) {
         Integer[] array = Integers.random(50000, 1, 50000);
         testSorts(array,
-                new QuickSort(),
-                new MergeSort(),
+
+//                new QuickSort(),
+//                new MergeSort(),
 //                new BubbleSort1(),
 //                new BubbleSort2(),
 //                new InsertionSort1(),
@@ -19,8 +25,9 @@ public class SortTest {
 //                new InsertionSort3(),
 //                new BubbleSort3(),
 //                new SelectionSort(),
-                new ShellSort(),
-                new HeapSort()
+//                new ShellSort(),
+//                new HeapSort(),
+                new CountingSort()
         );
     }
 

@@ -1,4 +1,6 @@
-package me.techbird.api.sort;
+package me.techbird.api.sort.cmp;
+
+import me.techbird.api.sort.Sort;
 
 /**
  * 优化：利用二分查找缩小寻找插入位置的时间为logn，然后一次性搬运数据，再插入到指定位置。

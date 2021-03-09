@@ -1,6 +1,7 @@
 package me.techbird.api.sort;
 
 import me.techbird.api.model.Student;
+import me.techbird.api.sort.cmp.ShellSort;
 
 import java.text.DecimalFormat;
 
@@ -74,6 +75,7 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<Sort<T
 
     private boolean isStable() {
         if(this instanceof ShellSort) return false;
+        if(this instanceof CountingSort) return true;
         Student[] stus = new Student[20];
         for (int i = 0; i < stus.length; i++) {
             stus[i] = new Student(i * 10, 10);
