@@ -12,6 +12,8 @@ import me.techbird.tool.Times;
 import me.techbird.tool.file.FileInfo;
 import me.techbird.tool.file.Files;
 
+import java.util.Iterator;
+
 public class MapTest {
     public static void main(String[] args) {
         test1();
@@ -20,6 +22,7 @@ public class MapTest {
         test4(new LinkedHashMap<>());
         test5(new LinkedHashMap<>());
     }
+
 
     static void test1Map(Map<String, Integer> map, String[] words) {
         Times.test(map.getClass().getName(), new Times.Task() {
