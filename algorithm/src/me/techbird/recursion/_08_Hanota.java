@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 08.06. 汉诺塔问题TODO
+ * 08.06. 汉诺塔问题
  * https://leetcode-cn.com/problems/hanota-lcci/
  */
 public class _08_Hanota {
@@ -27,6 +27,13 @@ public class _08_Hanota {
         movePlate(A.size(), A, B, C);
     }
 
+    /**
+     * 时间复杂度O(2^n)，空间复杂度O(n)
+     * @param num
+     * @param original
+     * @param auxiliary
+     * @param target
+     */
     public void movePlate(int num, List<Integer> original, List<Integer> auxiliary, List<Integer> target) {
         if (num <= 1) {
             target.add(original.remove(original.size() - 1));

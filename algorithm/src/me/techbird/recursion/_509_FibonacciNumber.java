@@ -77,6 +77,13 @@ public class _509_FibonacciNumber {
         return array[n];
     }
 
+    public static int fib7(int n, int[] array) {
+        if (array[n] == 0) {
+            array[n] = fib1(n - 1, array) + fib1(n - 2, array);
+        }
+        return array[n];
+    }
+
 
     //非递归方式利用数组优化空间复杂度为O(n)
     public static int fib2(int n) {
