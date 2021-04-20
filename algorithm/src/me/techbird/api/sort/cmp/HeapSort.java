@@ -8,7 +8,7 @@ public class HeapSort<T extends Comparable<T>> extends Sort<T> {
     @Override
     protected void sort() {
         heapSize = array.length;
-        //使用下滤原地建堆
+        //使用下滤原地建堆 复杂度？
         for (int i = (heapSize >> 1) - 1; i >= 0; i--) {
             siftDown(i);
         }

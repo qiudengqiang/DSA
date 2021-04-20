@@ -4,6 +4,9 @@ import me.techbird.api.list.DoubleCircleLinkedList;
 import me.techbird.api.list.List;
 import me.techbird.tool.Asserts;
 
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class ListTest {
 
     static void testList(List<Integer> list) {
