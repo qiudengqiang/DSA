@@ -48,12 +48,6 @@ public class _509_FibonacciNumber {
                 System.out.println(fib5(n));
             }
         });
-        Times.test("fib6", new Times.Task() {
-            @Override
-            public void execute() {
-                System.out.println(fib6(n));
-            }
-        });
     }
 
     //递归方式
@@ -126,33 +120,37 @@ public class _509_FibonacciNumber {
     }
 
 
-    //非递归方式去掉数组之优化空间复杂度为O(1)
-    public static int fib5(int n) {
-        if (n <= 1) return n;
-        int first = 0;
-        int second = 1;
-        for (int i = 0; i < n - 1; i++) {
-            int sum = first + second;
-            first = second;
-            second = sum;
-        }
-        return second;
-    }
-
     /**
      * 更简洁的写法
+     * 非递归方式去掉数组之优化空间复杂度为O(1)
      *
      * @param n
      * @return
      */
-    public static int fib6(int n) {
+    public static int fib5(int n) {
         if (n <= 1) return n;
-        int first = 0;
+        int first = 1;
         int second = 1;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 3; i <= n; i++) {
             second = first + second;
             first = second - first;
         }
         return second;
     }
+
+    /**
+     * 使用尾递归优化
+     * @param n
+     * @return
+     */
+    public static int fib6(int n) {
+        return fib6(n, 1, 1);
+    }
+
+    public static int fib6(int n, int first, int second) {
+        if (n <= 1) return first;
+        return fib6(n - 1, first, first + second);
+    }
+
+
 }

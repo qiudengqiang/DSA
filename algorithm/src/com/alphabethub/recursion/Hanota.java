@@ -2,6 +2,8 @@ package com.alphabethub.recursion;
 
 /**
  * 汉诺塔，A、B、C柱子堆盘子问题。思路
+ * 时间复杂度：O(2^n)
+ * 空间复杂度：O(n)
  */
 public class Hanota {
 

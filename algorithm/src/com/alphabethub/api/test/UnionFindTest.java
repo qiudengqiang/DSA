@@ -5,7 +5,6 @@ import com.alphabethub.api.union.UnionFind;
 import com.alphabethub.api.union.UnionFind_QU_R_PH;
 import com.alphabethub.tool.Asserts;
 import com.alphabethub.tool.Times;
-import me.techbird.api.union.*;
 
 public class UnionFindTest {
     private static int count = 5000000;
