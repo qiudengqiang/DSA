@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * 输入两个数字n,k，算法输出[1..n]中k个数字的所有组合
  */
-public class Combination {
+public class _77_Combination {
 
     public static void main(String[] args) {
-        List<List<Integer>> result = new Combination().combination(4, 2);
+        List<List<Integer>> result = new _77_Combination().combination(4, 2);
         System.out.println(result);
     }
 
