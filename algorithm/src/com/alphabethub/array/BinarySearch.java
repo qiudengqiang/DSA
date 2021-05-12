@@ -163,7 +163,7 @@ public class BinarySearch {
     }
 
 
-    /****以下为labuladong模板写法****/
+    /**** 以下为labuladong模板写法：要记忆 ****/
 
     public static int binary_search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
@@ -180,44 +180,49 @@ public class BinarySearch {
         return -1;
     }
 
-
+    /**
+     * 寻找左侧边界 [left,right)
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int left_bound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
+        int left = 0, right = nums.length;
 
-        while (left <= right) {
+        while (left < right) {
             int mid = left + ((right - left) >> 1);
             if (nums[mid] < target) {
                 left = mid + 1;
             } else if (nums[mid] > target) {
-                right = mid - 1;
+                right = mid;
             } else if (nums[mid] == target) {
-                right = mid - 1;
+                right = mid;//别返回，继续缩小左侧边界
             }
         }
-
-        //检查left边界
-        if (left >= nums.length || nums[left] != target)
-            return -1;
-        return left;
+        return left;//注意
     }
 
+    /**
+     * 寻找右侧边界 [left,right)
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int right_bound(int[] nums, int target) {
-        int left = 0, right = nums.length - 1;
+        int left = 0, right = nums.length;
 
-        while (left <= right) {
+        while (left < right) {
             int mid = left + ((right - left) >> 1);
             if (nums[mid] < target) {
                 left = mid + 1;
             } else if (nums[mid] > target) {
-                right = mid - 1;
+                right = mid;
             } else if (nums[mid] == target) {
-                left = mid + 1;
+                left = mid + 1;//别返回，继续缩小右侧边界
             }
         }
-
-        //检查right边界
-        if (right < 0 || nums[right] != target)
-            return -1;
-        return right;
+        return left - 1;//注意
     }
 }
