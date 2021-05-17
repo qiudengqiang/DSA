@@ -9,7 +9,7 @@ public class CoinChange {
     public static void main(String[] args) {
         Integer[] faces = {25, 10, 5, 1};
         int money = 41, coins = 0;
-//        new CoinChange().coinChange1(Arrays.sort(faces),money, coins);
+//        new _322_CoinChange().coinChange1(Arrays.sort(faces),money, coins);
         Arrays.sort(faces, (Integer i1, Integer i2) -> i2 - i1);
         new CoinChange().coinChange(faces, money, coins);
     }
