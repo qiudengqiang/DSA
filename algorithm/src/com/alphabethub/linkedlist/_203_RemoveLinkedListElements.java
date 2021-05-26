@@ -5,15 +5,26 @@ package com.alphabethub.linkedlist;
  * https://leetcode-cn.com/problems/remove-linked-list-elements/
  */
 public class _203_RemoveLinkedListElements {
+
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     * @param head
+     * @param val
+     * @return
+     */
     public ListNode removeElements(ListNode head, int val) {
-        ListNode sentinel = new ListNode(0);
-        sentinel.next = head;
-        ListNode prev = sentinel, curr = head;
-        while (curr != null) {
-            if (curr.val == val) prev.next = curr.next;
-            else prev = curr;
-            curr = curr.next;
+        if (head == null) return null;
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+        while (head != null) {
+            if (head.val != val) {
+                tail.next = head;
+                tail = head;
+            }
+            head = head.next;
         }
-        return sentinel.next;
+        tail.next = null;
+        return dummy.next;
     }
 }

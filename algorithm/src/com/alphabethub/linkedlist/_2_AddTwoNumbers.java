@@ -6,22 +6,41 @@ package com.alphabethub.linkedlist;
  */
 
 public class _2_AddTwoNumbers {
+
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode head = null, tail = null;
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+        ListNode newNode = new ListNode(0);
+        ListNode tail = newNode;
         int carry = 0;
         while (l1 != null || l2 != null) {
-            int sum = l1.val + l2.val + carry;
-            if(head == null){
-                head = tail = new ListNode(sum%10);
-            }else{
-                tail.next = new ListNode(sum%10);
-                tail = tail.next;
+            int v1 = 0;
+            if (l1 != null) {
+                v1 = l1.val;
+                l1 = l1.next;
             }
-            carry = sum/10;
-            l1 = l1.next;
-            l2 = l2.next;
+
+            int v2 = 0;
+            if (l2 != null) {
+                v2 = l2.val;
+                l2 = l2.next;
+            }
+
+            int sum = v1 + v2 + carry;
+            carry = sum / 10;
+            tail.next = new ListNode(sum % 10);
+            tail = tail.next;
         }
-        if(carry>0) tail.next = new ListNode(carry);
-        return head;
+        if (carry > 0) tail.next = new ListNode(carry);
+        return newNode.next;
+
     }
 }

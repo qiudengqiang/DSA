@@ -9,12 +9,19 @@ public class _9_IsPalindrome {
         System.out.println(isPalidrome(112));
     }
 
-    public static boolean isPalidrome(int x){
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
+     *
+     * @param x
+     * @return
+     */
+    public static boolean isPalidrome(int x) {
         String string = String.valueOf(x);
         for (int i = 0; i < string.length(); i++) {
-           if(string.charAt(i) != string.charAt(string.length()-i-1)){
-              return false;
-           }
+            if (string.charAt(i) != string.charAt(string.length() - i - 1)) {
+                return false;
+            }
         }
         return true;
     }
