@@ -10,6 +10,30 @@ public class _19_RemoveNthFromEnd {
     }
 
     /**
+     * 双指针技巧
+     * 时间复杂度O(n)
+     * 空间复杂度O(1)
+     * @param head
+     * @param n
+     * @return
+     */
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode fast = head, slow = dummy;
+        for (int i = 0; i < n; ++i) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        //此时slow指向的就是导数第n的前一个节点
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+
+    /**
      * 时间复杂度：O（n）
      * 空间复杂度：O（1）
      *
@@ -17,7 +41,7 @@ public class _19_RemoveNthFromEnd {
      * @param n
      * @return
      */
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
+    public static ListNode removeNthFromEnd1(ListNode head, int n) {
         int t = 0;
         ListNode cur = head;
         while (cur != null) {

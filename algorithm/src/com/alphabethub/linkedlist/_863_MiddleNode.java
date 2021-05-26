@@ -5,6 +5,25 @@ package com.alphabethub.linkedlist;
  * https://leetcode-cn.com/problems/middle-of-the-linked-list/
  */
 public class _863_MiddleNode {
+
+    /**
+     * 双指针技巧
+     * 时间复杂度O(n)
+     * 空间复杂度O(1)
+     *
+     * @param head
+     * @return
+     */
+    public ListNode middleNode(ListNode head) {
+        ListNode slow, fast;
+        slow = fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     /**
      * 时间复杂度:O(n)
      * 空间复杂度:O(n)
@@ -12,7 +31,7 @@ public class _863_MiddleNode {
      * @param head
      * @return
      */
-    public ListNode middleNode(ListNode head) {
+    public ListNode middleNode1(ListNode head) {
         ListNode[] nodes = new ListNode[100];
         int i = 0;
         for (; head != null; i++) {
@@ -44,23 +63,5 @@ public class _863_MiddleNode {
             current = current.next;
         }
         return current;
-    }
-
-    /**
-     * 快慢指针法
-     * 时间复杂度：O（n）
-     * 空间复杂度：O（1）
-     *
-     * @param head
-     * @return
-     */
-    public ListNode middleNode3(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next;
-        }
-        return slow;
     }
 }

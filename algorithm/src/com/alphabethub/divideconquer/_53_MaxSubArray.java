@@ -7,7 +7,7 @@ package com.alphabethub.divideconquer;
 public class _53_MaxSubArray {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-//        System.out.println(new _53_MaxSubArray().maxSubArray(nums));
+//        System.out.println(new _53_MaxSubArraySum().maxSubArray(nums));
         System.out.println(maxSubarray2(nums));
     }
 

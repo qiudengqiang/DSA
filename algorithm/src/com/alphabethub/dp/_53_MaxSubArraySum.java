@@ -4,7 +4,7 @@ package com.alphabethub.dp;
  * 53. 最大子序和
  * https://leetcode-cn.com/problems/maximum-subarray/
  */
-public class _53_MaxSubArray {
+public class _53_MaxSubArraySum {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(maxSubArray(nums));
