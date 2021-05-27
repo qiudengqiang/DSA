@@ -1,4 +1,4 @@
-package com.alphabethub.leetbook.primary;
+package com.alphabethub.array;
 
 /**
  * 删除排序数组中的重复项，返回移除后数组的新长度。
