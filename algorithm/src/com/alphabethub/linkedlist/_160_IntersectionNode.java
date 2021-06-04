@@ -6,6 +6,7 @@ package com.alphabethub.linkedlist;
  */
 public class _160_IntersectionNode {
     /**
+     * 思路：把A链表的尾部接上B链表，在B链表的尾部接上A链表。这样两个链表就等长
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      *

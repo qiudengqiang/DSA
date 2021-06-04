@@ -7,6 +7,7 @@ package com.alphabethub.linkedlist;
 public class _203_RemoveLinkedListElements {
 
     /**
+     * 思路：新建一个链表，把不等于val的节点串在新链表的尾部
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      * @param head

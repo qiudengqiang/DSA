@@ -7,18 +7,27 @@ import java.util.Stack;
  * https://leetcode-cn.com/problems/daily-temperatures/
  */
 public class _739_DailyTemperatures {
-    public int[] dailyTemperatures(int[] temperatures) {
+
+    /**
+     * 思路：在栈pop的时候计算右边的值
+     *
+     * @param temperatures
+     * @return
+     */
+    public int[] dailyTemperatures_pop(int[] temperatures) {
         if (temperatures == null || temperatures.length == 0) return null;
-        int[] daily = new int[temperatures.length];
 
         Stack<Integer> stack = new Stack<>();
-        for (int i = temperatures.length; i > 0; i--) {
+        //存放元素索引，而不是元素
+        int[] result = new int[temperatures.length];
+
+        for (int i = 0; i < temperatures.length; i++) {
             while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
-                daily[stack.peek()] = i-stack.peek();
+                result[stack.peek()] = i - stack.peek();
                 stack.pop();
             }
             stack.push(i);
         }
-        return daily;
+        return result;
     }
 }

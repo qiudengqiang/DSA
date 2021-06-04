@@ -7,9 +7,9 @@ package com.alphabethub.linkedlist;
 public class _83_DeleteSortedDuplicatesElements {
     public ListNode deleteDuplicates(ListNode head) {
         if(head == null) return null;
-        ListNode sentinel = new ListNode(0);
-        sentinel.next = head;
-        ListNode prev = sentinel, curr = head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode prev = dummy, curr = head;
         while (curr != null && curr.next != null) {
             if(curr.val == curr.next.val){
                 prev.next = curr.next;
@@ -18,6 +18,6 @@ public class _83_DeleteSortedDuplicatesElements {
             }
             curr = curr.next;
         }
-        return sentinel.next;
+        return dummy.next;
     }
 }

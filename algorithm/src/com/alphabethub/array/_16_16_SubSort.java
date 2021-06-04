@@ -15,7 +15,6 @@ public class _16_16_SubSort {
     public static int[] subSort(int[] nums) {
         if (nums.length == 0) return new int[]{-1, -1};
 
-
         //从左到右扫描逆序对，正序：逐渐变大
         int max = nums[0];
         //用于记录最右逆序对位置
@@ -27,6 +26,7 @@ public class _16_16_SubSort {
                 r = i;
             }
         }
+
         //数组有序，提前结束
         if (r == -1) return new int[]{-1, -1};
 
