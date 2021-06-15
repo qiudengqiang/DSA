@@ -14,7 +14,7 @@ public class Pirate {
         for (int i = 0; i < weights.length; i++) {
             int newWeight = weight + weights[i];
             if (newWeight < capacity) {
-                weight+=weights[i];
+                weight += weights[i];
                 count++;
             }
         }
