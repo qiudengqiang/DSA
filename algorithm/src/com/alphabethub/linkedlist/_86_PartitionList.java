@@ -22,6 +22,7 @@ public class _86_PartitionList {
         ListNode rTail = rHead;
 
         while (head != null) {
+            //这里的'='很重要，不然会漏掉元素
             if (head.val >= x) {
                 rTail.next = head;
                 rTail = head;

@@ -12,6 +12,13 @@ public class _169_MajorityElement {
         return nums[nums.length >> 1];
     }
 
+    /**
+     * 思路：利用二叉堆优先队列
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(n/2)
+     * @param nums
+     * @return
+     */
     public int majorityElement2(int[] nums) {
         int len = (nums.length + 1) >> 1;
         PriorityQueue<Integer> pQueue = new PriorityQueue<>(len, Comparator.comparingInt(item -> -item));
@@ -24,7 +31,8 @@ public class _169_MajorityElement {
     }
 
     /**
-     * 时间复杂度O(n+k)
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
      * @param nums
      * @return
      */

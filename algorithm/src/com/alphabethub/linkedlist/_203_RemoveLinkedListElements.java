@@ -25,6 +25,7 @@ public class _203_RemoveLinkedListElements {
             }
             head = head.next;
         }
+        //这一句比较关键
         tail.next = null;
         return dummy.next;
     }
