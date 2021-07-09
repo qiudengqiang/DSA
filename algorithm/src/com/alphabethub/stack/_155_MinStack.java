@@ -7,7 +7,12 @@ import java.util.Stack;
  * https://leetcode-cn.com/problems/min-stack/
  */
 public class _155_MinStack {
-
+    /**
+     * 算法思路：利用两个栈实现：一个正常栈，一个最小栈; 每次存放元素时候，最小栈都保存当前的最小值
+     * 利用空间换时间
+     * 时间复杂度：O(1)
+     * 空间复杂度：O(n)
+     */
     private Stack<Integer> stack;
     private Stack<Integer> minStack;
     public _155_MinStack() {

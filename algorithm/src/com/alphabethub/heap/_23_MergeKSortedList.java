@@ -11,6 +11,8 @@ import java.util.PriorityQueue;
 public class _23_MergeKSortedList {
     /**
      * 解法1：利用最小堆
+     * 时间复杂度：O(n*logk)
+     * 空间复杂度：O(k)
      **/
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
@@ -25,12 +27,12 @@ public class _23_MergeKSortedList {
         }
 
         ListNode head = new ListNode(-1);
-        ListNode trail = head;
+        ListNode tail = head;
         while (!heap.isEmpty()) {
-            trail.next = heap.poll();
-            trail = trail.next;
-            if (trail.next != null) {
-                heap.offer(trail.next);//?为什么要做这一步
+            tail.next = heap.poll();
+            tail = tail.next;
+            if (tail.next != null) {
+                heap.offer(tail.next);//?为什么要做这一步
             }
         }
         return head.next;
@@ -52,20 +54,20 @@ public class _23_MergeKSortedList {
 
     public ListNode merge2List2(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
-        ListNode trail = head;
+        ListNode tail = head;
         while (l1 != null && l2 != null) {
             if (l2.val > l1.val) {
-                trail.next = l1;
+                tail.next = l1;
                 l1 = l1.next;
             } else {
-                trail.next = l2;
+                tail.next = l2;
                 l2 = l2.next;
             }
-            trail = trail.next;
+            tail = tail.next;
         }
 
 
-        trail.next = l1 == null ? l2 : l1;
+        tail.next = l1 == null ? l2 : l1;
         return head.next;
     }
 
