@@ -32,7 +32,7 @@ public class _86_PartitionList {
             }
             head = head.next;
         }
-        //这句代码不能少
+        //这句代码不能少,保证如果最后添加的节点指针不再指向它后面的节点
         rTail.next = null;
         lTail.next = rHead.next;
         return lHead.next;

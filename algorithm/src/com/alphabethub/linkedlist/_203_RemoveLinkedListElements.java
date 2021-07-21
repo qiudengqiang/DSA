@@ -25,7 +25,7 @@ public class _203_RemoveLinkedListElements {
             }
             head = head.next;
         }
-        //这一句比较关键
+        //这一句比较关键，因为有可能tail并不指向原链表的最后一个元素
         tail.next = null;
         return dummy.next;
     }
