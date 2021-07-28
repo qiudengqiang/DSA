@@ -36,6 +36,12 @@ public class _20_ValidParentheses {
         return stack.isEmpty();
     }
 
+    /**
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(n)
+     * @param s
+     * @return
+     */
     public static boolean isValid1(String s) {
         Stack<Character> stack = new Stack<>();
         int len = s.length();

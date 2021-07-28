@@ -40,21 +40,23 @@ public class _654_ConstructMaximumBinaryTree {
             }
             stack.push(i);
         }
-
+        //存放父节点的索引
         int[] pis = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
+
+            //左右都是-1的是根节点
             if (lis[i] == -1 && ris[i] == -1) {
                 //i的位置是根节点
                 pis[i] = -1;
                 continue;
             }
 
-            if (lis[i] == -1) {
+            if (lis[i] == -1) {//左边空，右边是父节点
                 pis[i] = ris[i];
-            } else if (ris[i] == -1) {
+            } else if (ris[i] == -1) {//右边空，左边是父节点
                 pis[i] = lis[i];
             } else {
-                pis[i] = Math.min(nums[lis[i]], nums[ris[i]]);
+                pis[i] = Math.min(nums[lis[i]], nums[ris[i]]);//左右都有，更大的是父节点
             }
         }
 
@@ -74,8 +76,16 @@ public class _654_ConstructMaximumBinaryTree {
         return findRoot(nums, 0, nums.length);
     }
 
+    /**
+     * 找出[l,r)范围内的根节点
+     * @param nums
+     * @param l
+     * @param r
+     * @return
+     */
     private TreeNode findRoot(int[] nums, int l, int r) {
         if (l == r) return null;
+        //找出[l,r)范围内的最大值索引
         int maxIdx = l;
         for (int i = l + 1; i < r; i++) {
             if (nums[i] > nums[maxIdx]) maxIdx = i;

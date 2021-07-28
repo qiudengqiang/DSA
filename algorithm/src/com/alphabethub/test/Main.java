@@ -15,7 +15,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Class3();
+//        new Class3();
+        String str = "001070120002";
+        System.out.println(str.getBytes().length);
     }
 }
 
