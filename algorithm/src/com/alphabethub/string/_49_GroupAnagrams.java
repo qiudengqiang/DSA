@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
  * 49. 字母异位词分组
  * https://leetcode-cn.com/problems/group-anagrams/solution/zi-mu-yi-wei-ci-fen-zu-by-leetcode-solut-gyoc/
  * 题意解释：把是异位词的单词分为一组，最后返回多个组。
+ * 字母异位词指字母相同，但排列不同的字符串。
  * 思路：利用hashmap中映射，字符排序之后作为映射的键保证键的唯一性。
  */
 public class _49_GroupAnagrams {
