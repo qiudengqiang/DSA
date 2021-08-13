@@ -2,6 +2,7 @@ package com.alphabethub.heap;
 
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 
 /**
@@ -16,12 +17,10 @@ public class _23_MergeKSortedList {
      **/
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
-        PriorityQueue<ListNode> heap = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                return o1.val - o2.val;
-            }
+        PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>(lists.length, (o1, o2) -> {
+            return o1.val - o2.val;
         });
+
         for (ListNode node : lists) {
             if (node != null) heap.offer(node);
         }
