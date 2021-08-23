@@ -10,3 +10,6 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 out/
 .class
+.gitignore
+.DS_Store
+**/.DS_Store
