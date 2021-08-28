@@ -5,6 +5,13 @@ import java.util.LinkedList;
 import java.util.Deque;
 
 public class Solution {
+    /***
+     * 指定窗口大小和步长
+     * @param nums
+     * @param windowSize
+     * @param step
+     * @return
+     */
     public int[] slideWindow(int[] nums, int windowSize, int step) {
         if (nums == null || nums.length == 0 || windowSize < 1) return new int[0];
         if (windowSize == 1 && step == 1) return nums;
@@ -26,6 +33,11 @@ public class Solution {
         return maxes;
     }
 
+    /**
+     * i<j<k,nums[i]<nums[j]<nums[k]，满足此条件的个数
+     * @param nums
+     * @return
+     */
     public int find132Pattern(int[] nums) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
