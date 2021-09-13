@@ -1,4 +1,4 @@
-package com.alphabethub.exam.tencent;
+package com.alphabethub.exam.tencent.one;
 
 public class First {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.alphabethub.exam.tencent;
+package com.alphabethub.exam.tencent.one;
 
 import java.util.Scanner;
 

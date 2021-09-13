@@ -1,9 +1,15 @@
 package com.alphabethub.test;
 
 
+import com.alphabethub.tool.Times;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     static {
         System.out.println("Static initialization of Main");
+
     }
 
     {
@@ -17,6 +23,7 @@ public class Main {
     public static void main(String[] args) {
         new Class3();
     }
+
 }
 
 class Class1 {
