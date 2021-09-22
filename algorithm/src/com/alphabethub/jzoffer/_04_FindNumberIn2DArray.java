@@ -20,4 +20,28 @@ public class _04_FindNumberIn2DArray {
         }
         return false;
     }
+
+    /**
+     * 时间复杂度：O(n+m)
+     * 空间复杂度：0(1)
+     * @param matrix
+     * @param target
+     */
+    public boolean findNumberIn2DArray2(int[][] matrix, int target) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return false;
+
+        int rows = matrix.length, cols = matrix[0].length;
+        int row = 0, col = cols - 1;
+        while (row < rows && col >= 0) {
+            int num = matrix[row][col];
+            if (num == target) {
+                return true;
+            } else if (num > target) {
+                col--;
+            } else {
+                row++;
+            }
+        }
+        return false;
+    }
 }
