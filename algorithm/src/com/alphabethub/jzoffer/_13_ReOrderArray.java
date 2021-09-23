@@ -12,6 +12,7 @@ public class _13_ReOrderArray {
     }
 
     /**
+     * 思路：双指针一趟扫描
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
      *
@@ -26,12 +27,12 @@ public class _13_ReOrderArray {
         int idx_head = head;
         int idx_tail = tail;
         while (head < array.length && tail >= 0) {
-            if(array[head]%2 == 1){//奇数放前面
+            if (array[head] % 2 == 1) {//奇数放前面
                 nums[idx_head] = array[head];
                 idx_head++;
             }
             head++;
-            if(array[tail]%2 == 0){//偶数放后面
+            if (array[tail] % 2 == 0) {//偶数放后面
                 nums[idx_tail] = array[tail];
                 idx_tail--;
             }
