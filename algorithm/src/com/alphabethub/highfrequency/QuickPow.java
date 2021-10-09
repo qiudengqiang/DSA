@@ -1,5 +1,7 @@
 package com.alphabethub.highfrequency;
 
+import java.util.LinkedList;
+
 /**
  * 快速求幂
  */
@@ -7,6 +9,8 @@ public class QuickPow {
 
     public static void main(String[] args) {
         System.out.println(power(2, 4));
+        LinkedList<Integer> list = new LinkedList<>();
+        Integer last = list.removeLast();
     }
 
     /**
